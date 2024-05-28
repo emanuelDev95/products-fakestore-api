@@ -1,6 +1,6 @@
 import { RouterLink } from '@angular/router';
 import { Product } from './../../../shared/models/product.interface';
-import { Component, EventEmitter, Output, input } from '@angular/core';
+import { Component,input, output } from '@angular/core';
 import { CurrencyPipe, SlicePipe } from '@angular/common';
 
 @Component({
@@ -14,14 +14,12 @@ export class CardComponent {
 
   //se obtiene como una propiedad para pintar
   product = input.required<Product>();
-  @Output() addToCartEvent = new EventEmitter<Product>();
+  addToCartEvent = output<Product>();
 
 
 
   onAddToCart() : void {
-
     this.addToCartEvent.emit(this.product())
-
   }
 
 }

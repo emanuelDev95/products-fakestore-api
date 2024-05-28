@@ -10,8 +10,8 @@ export interface Product{
   subtotal : number;
 }
 
- interface Rating{
 
+interface Rating{
   rate : number;
   count: number;
 
